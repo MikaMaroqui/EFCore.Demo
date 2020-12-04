@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30709.64
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.Demo", "EFCore.Demo.csproj", "{E26CA445-0F01-4A1E-BE92-806949133E7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Demo", "..\Company.Demo\Company.Demo.csproj", "{F97E72E5-C148-499D-9317-F4749C97F065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Companies.Demo", "..\Company.Demo\Companies.Demo.csproj", "{F97E72E5-C148-499D-9317-F4749C97F065}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
