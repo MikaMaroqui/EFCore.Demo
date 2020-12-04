@@ -17,9 +17,5 @@
     <ProjectReference Include="..\Company.Demo\Companies.Demo.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 
 </Project>

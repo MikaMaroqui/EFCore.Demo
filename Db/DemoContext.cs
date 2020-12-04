@@ -16,8 +16,6 @@ namespace EFCore.Demo.Db
         public DbSet<Project> Projects { get; set; }
 
         // These 3 should be in the same table, with a discriminator column
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<StaffMember> StaffMembers { get; set; }
         public DbSet<Consultant> Consultants { get; set; }
 
         public DbSet<ConsultantProject> ConsultantProjects { get; set; }
@@ -40,19 +38,16 @@ namespace EFCore.Demo.Db
 
             // Relationship between Company and Employees (One to Many)
             modelBuilder.Entity<Company>()
-                .HasMany<StaffMember>()
+                .HasMany(c => c.Consultants)
                 .WithOne()
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<Company>()
-                .HasMany<Consultant>()
-                .WithOne()
+                .HasForeignKey(c => c.CompanyId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Relationship between Client and Projects (One to Many)
             modelBuilder.Entity<Client>()
-                .HasMany<Project>()
+                .HasMany( c => c.Projects)
                 .WithOne()
+                .HasForeignKey(p => p.ClientId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Relationship between Consultant and Project (Many to Many)
