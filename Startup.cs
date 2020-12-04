@@ -32,10 +32,10 @@ namespace EFCore.Demo
             services.Configure<ConnectionStrings>(Configuration.GetSection(nameof(ConnectionStrings)));
 
             // Inject Db elements
-            // services.AddDbContext<DemoContext>(
-            //     options => options.UseSqlServer(Configuration["Database:ConnectionString"]),
-            //     ServiceLifetime.Transient
-            // );
+            services.AddDbContext<DemoContext>(
+                options => options.UseSqlServer(Configuration["ConnectionStrings:DbConnectionString"]),
+                ServiceLifetime.Transient
+            );
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DemoContext context)
